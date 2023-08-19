@@ -38,18 +38,18 @@ const Resume = () => {
                   Software Developer
                 </h1>
                 <span className=" text-[.9rem] font-semibold text-gray-500 sm:text-base">
-                  Company Name
+                Soft Suave Technologies
                 </span>
                 <span className=" text-[.9rem] font-semibold text-yellow-500 sm:text-base">
-                  June 2023 - Present
+                  Nov 2021 - Present
                 </span>
                 <p className=" text-[.9rem] text-justify break-words text-gray-500">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Excepturi nihil aut quae obcaecati alias placeat totam aperiam
-                  pariatur quam? Accusantium minima aperiam error obcaecati
-                  autem doloribus deserunt qui, laborum incidunt amet, numquam
-                  eos cum tempora. Debitis, esse quae corporis deserunt officia
-                  quos in a, quaerat vero odio vitae.
+                At Soft Suave Technologies since November 2021, I've employed PHP, React, MySQL, 
+                and Laravel to strengthen diverse web projects. I've proficiently built sturdy 
+                backends, engaging front-end interfaces, and efficient MySQL data systems. 
+                Collaborating seamlessly within cross-functional teams, 
+                I consistently yield high-quality results and remain devoted to driving 
+                innovation for the company's continuous success.
                 </p>
               </div>
             </div>
@@ -73,21 +73,19 @@ const Resume = () => {
               {/* design */}
               <div className=" flex flex-col gap-1 border-2 border-yellow-400 shadow-[0px_0px_16px_1px_rgba(0,0,0,0.1)] p-3 rounded-lg">
                 <h1 className="text-[1.4rem] font-semibold sm:text-xl">
-                  B.Tech, Computer Science
+                  B.Sc, Computer Science
                 </h1>
                 <span className=" text-[.9rem] font-semibold text-gray-500 sm:text-base">
-                  College Name
+                  Kamaraj College of arts and science, Tuticorin
                 </span>
                 <span className=" text-[.9rem] font-semibold text-yellow-500 sm:text-base">
-                  Year 2023 - Year 2027
+                  Year 2015 - Year 2018
                 </span>
                 <p className=" text-[.9rem] text-justify text-gray-500">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Excepturi nihil aut quae obcaecati alias placeat totam aperiam
-                  pariatur quam? Accusantium minima aperiam error obcaecati
-                  autem doloribus deserunt qui, laborum incidunt amet, numquam
-                  eos cum tempora. Debitis, esse quae corporis deserunt officia
-                  quos in a, quaerat vero odio vitae.
+                I have a Bachelor of Science degree in Computer Science. 
+                This education has given me a good grasp of computer basics, programming, and problem-solving. 
+                It helps me tackle technical challenges logically and stay updated in the ever-changing tech world.
+                I'm excited to apply the knowledge from my degree to real-world projects and continue growing in the field of technology.
                 </p>
               </div>
             </div>
