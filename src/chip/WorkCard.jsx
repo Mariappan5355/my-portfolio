@@ -1,98 +1,162 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { data } from "../data/data";
-import { RxExternalLink } from "react-icons/rx";
-import { AiOutlineGithub } from "react-icons/ai";
-import { Link } from "react-router-dom";
 
 const WorkCard = () => {
-  const reversedData = [...data].reverse();
+  const [selectedProject, setSelectedProject] = useState(null);
+
+  const handleClick = (project) => {
+    setSelectedProject(project);
+  };
+
+  const closePopup = () => {
+    setSelectedProject(null);
+  };
+
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === "Escape") {
+        closePopup();
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+
+    // Cleanup the event listener on component unmount
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, []);
 
   return (
     <>
-      {reversedData.map((data) => {
-        return (
+      {data.map((project, index) => (
+        <div
+          key={project.id}
+          className="flex flex-col justify-center items-center gap-4"
+        >
           <div
-            data-aos="zoom-in"
-            key={data.id}
-            className="flex flex-col justify-center items-center gap-4"
+            className="relative cursor-pointer"
+            onClick={() => handleClick(project)}
           >
-            <POPUP className="img-content relative">
-              <div className="h-[280px] w-[380px] hover:scale-125 transition duration-500 cursor-pointer shadow-xl rounded-md overflow-hidden sm:h-[260px] sm:w-[92%] sm:bg-cover mx-auto ">
-                <img
-                  src={data.img}
-                  alt={data.title}
-                  className=" object-fit w-full h-full hover:scale-125 transition duration-500 cursor-pointer"
-                />
-              </div>
-
-              <div
-                className={` popup w-full  h-[280px] shadow-xl rounded-md overflow-hidden sm:h-[260px] sm:w-[92%] p-4`}
-              >
-                <p className=" text-gray-900 text-base leading-[1.4] text-justify w-[90%]">
-                  {data.desc}
-                </p>
-                <div className=" flex items-center justify-center gap-4">
-                  <Link
-                    to={data.link}
-                    target="_blank"
-                    className="  mt-3 rounded-md shadow-md p-1 px-2 flex gap-2 items-center justify-center font-medium"
-                  >
-                    <RxExternalLink className=" text-black bg-white rounded-full border  w-[35px] h-[35px] p-2" />
-                    <p className=" text-black">Demo</p>
-                  </Link>
-                  <br className="w-[2px] bg-white" />
-                  <Link
-                    to={data.git}
-                    target="_blank"
-                    className="  mt-3 rounded-md shadow-md p-1 px-2 flex gap-2 items-center justify-center font-medium"
-                  >
-                    <AiOutlineGithub className="  text-black bg-white rounded-full border  w-[35px] h-[35px] p-2" />
-                    <p className=" text-black">Code</p>
-                  </Link>
-                </div>
-              </div>
-            </POPUP>
-            <p className="text-gray-800 text-xl font-medium sm:text-lg">
-              {data.title}
+            <ImageContainer
+              className={`h-[280px] w-auto max-w-[380px] hover:scale-125 transition duration-500 shadow-xl rounded-md overflow-hidden sm:h-[260px] sm:w-[92%] mx-auto ${
+                index === 0 ? "mt-[-20px]" : ""
+              }`} // Apply negative margin to first image box
+            >
+              <StyledImage src={project.img} alt={project.title} />
+            </ImageContainer>
+            <p className="text-gray-800 text-xl font-medium sm:text-lg mt-2">
+              {project.title}
             </p>
           </div>
-        );
-      })}
+
+          {selectedProject && selectedProject.id === project.id && (
+            <PopupOverlay onClick={closePopup}>
+              <PopupContent onClick={(e) => e.stopPropagation()}>
+                <CloseButton onClick={closePopup}>×</CloseButton>
+                <h2 className="text-xl font-bold mb-2">
+                  {selectedProject.title}
+                </h2>
+                <Section>
+                  <p className="text-gray-900 mb-2">
+                    Technologies: {selectedProject.technologies}
+                  </p>
+                </Section>
+                <Section>
+                  <p className="text-gray-900 mb-2">
+                    Project Management Tool: {selectedProject.projectManagement}
+                  </p>
+                </Section>
+                <Section>
+                  <p className="text-gray-900 mb-2">
+                    {selectedProject.desc}
+                  </p>
+                </Section>
+                <Section>
+                  <p className="text-gray-900 mb-2">
+                    Responsibilities:
+                    <ul className="list-disc ml-4">
+                      {selectedProject.responsibilities.map((resp, index) => (
+                        <li key={index}>{resp}</li>
+                      ))}
+                    </ul>
+                  </p>
+                </Section>
+              </PopupContent>
+            </PopupOverlay>
+          )}
+        </div>
+      ))}
     </>
   );
 };
 
 export default WorkCard;
 
-const POPUP = styled.div`
+// Styled components for layout and design
+const PopupOverlay = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+`;
+
+const PopupContent = styled.div`
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 900px;
+  max-height: 80vh; /* Set a maximum height for the popup */
   position: relative;
-  img {
-    &:hover {
-      transform: scaleX(2);
-    }
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin: 0 auto;
+  overflow-y: auto; /* Enable vertical scrolling if needed */
+`;
+
+const Section = styled.div`
+  margin-bottom: 20px;
+  border-bottom: 1px solid #e0e0e0;
+  padding-bottom: 20px;
+  &:last-child {
+    border-bottom: none;
   }
-  .popup {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    opacity: 0;
-    margin: auto;
-    transition: 0.5s ease;
-    background: rgba(255, 255, 255, 0.5);
-    backdrop-filter: blur(5px);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+`;
+
+const CloseButton = styled.button`
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  font-size: 24px;
+  color: #333;
+  cursor: pointer;
+  &:hover {
+    color: #000;
   }
-  .icon {
-    color: #fff !important;
-  }
-  &:hover .popup {
-    opacity: 1;
-    color: #fff;
-  }
+`;
+
+const ImageContainer = styled.div`
+  position: relative;
+  width: 25vw;  /* Set a fixed width */
+  height: 200px;  /* Set a fixed height */
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;  /* Center the logo inside the box */
+  // background-color: #f0f0f0;  /* Optional: Set a background color for visibility */
+`;
+
+const StyledImage = styled.img`
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 `;
