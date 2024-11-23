@@ -2,6 +2,15 @@
   "projects": {
     "my-portfolio": "my-portfolio-c047b"
   },
-  "targets": {},
-  "etags": {}
+  "targets": {
+    "my-portfolio-c047b": {
+      "hosting": {
+        "my-portfolio": [
+          "my-portfolio-c047b"
+        ]
+      }
+    }
+  },
+  "etags": {},
+  "dataconnectEmulatorConfig": {}
 }

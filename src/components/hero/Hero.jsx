@@ -26,9 +26,9 @@ const Hero = () => {
             <TypeAnimation
               data-aos="fade-up"
               sequence={[
-                "Web Developer",
+                "Full Stack Developer",
                 2000,
-                "Freelancer",
+                "Software Engineer",
                 2000,
                 "",
               ]}
@@ -46,7 +46,7 @@ const Hero = () => {
           </div>
           <div data-aos="fade-up" className="buttons flex gap-5">
             <a
-              href=""
+              href="https://wa.me/7667505355?text=Hi%20Mariappan,%20I%20want%20to%20discuss%20a%20project!"
               className=" bg-black text-[1rem] text-white px-10 py-2 sm:px-8 rounded-lg font-bold  hover:text-yellow-500"
             >
               <span> Hire Me</span>

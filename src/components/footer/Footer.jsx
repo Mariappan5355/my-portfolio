@@ -41,7 +41,7 @@ const Footer = () => {
         </div>
         <div className="sm:text-[12px]">
           {/* | Copyright &copy; <span> </span> All rights reserved */}
-          <a href="#"></a> |
+          {/* <a href="#"></a> | */}
         </div>
       </div>
     </div>

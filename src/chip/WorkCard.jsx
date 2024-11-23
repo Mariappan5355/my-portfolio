@@ -33,20 +33,20 @@ const WorkCard = () => {
       {data.map((project, index) => (
         <div
           key={project.id}
-          className="flex flex-col justify-center items-center gap-4"
+          className="flex flex-col justify-center items-center gap-4 grid-box"
         >
           <div
             className="relative cursor-pointer"
             onClick={() => handleClick(project)}
           >
             <ImageContainer
-              className={`h-[280px] w-auto max-w-[380px] hover:scale-125 transition duration-500 shadow-xl rounded-md overflow-hidden sm:h-[260px] sm:w-[92%] mx-auto ${
-                index === 0 ? "mt-[-20px]" : ""
+              className={`hover:scale-105 transition durati5n-500 shadow-xl rounded-md overflow-hidden sm:h-[260px] sm:w-[92%] mx-auto ${
+                index === 0 ? " " : ""
               }`} // Apply negative margin to first image box
             >
               <StyledImage src={project.img} alt={project.title} />
             </ImageContainer>
-            <p className="text-gray-800 text-xl font-medium sm:text-lg mt-2">
+            <p className="flex justify-center text-gray-700 text-xl font-medium sm:text-lg mt-3">
               {project.title}
             </p>
           </div>

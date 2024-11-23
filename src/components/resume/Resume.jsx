@@ -44,12 +44,10 @@ const Resume = () => {
                   Nov 2021 - Present
                 </span>
                 <p className=" text-[.9rem] text-justify break-words text-gray-500">
-                At Soft Suave Technologies since November 2021, I've employed PHP, React, MySQL, 
-                and Laravel to strengthen diverse web projects. I've proficiently built sturdy 
-                backends, engaging front-end interfaces, and efficient MySQL data systems. 
-                Collaborating seamlessly within cross-functional teams, 
-                I consistently yield high-quality results and remain devoted to driving 
-                innovation for the company's continuous success.
+                At Soft Suave Technologies since November 2021, I have employed Node.js, React, MySQL, and Laravel 
+                to enhance various web projects. I have proficiently built robust backends, engaging front-end 
+                interfaces, and efficient MySQL data systems. By collaborating seamlessly with cross-functional teams, 
+                I consistently deliver high-quality results and remain dedicated to driving innovation for the company's continued success.
                 </p>
               </div>
             </div>
@@ -82,10 +80,10 @@ const Resume = () => {
                   Year 2015 - Year 2018
                 </span>
                 <p className=" text-[.9rem] text-justify text-gray-500">
-                I have a Bachelor of Science degree in Computer Science. 
-                This education has given me a good grasp of computer basics, programming, and problem-solving. 
-                It helps me tackle technical challenges logically and stay updated in the ever-changing tech world.
-                I'm excited to apply the knowledge from my degree to real-world projects and continue growing in the field of technology.
+                I have a Bachelor of Science degree in Computer Science, which has provided me with a strong 
+                foundation in computer fundamentals, programming, and problem-solving. 
+                This education enables me to approach technical challenges logically and stay current in the rapidly evolving tech landscape.
+                I am eager to apply the knowledge gained from my degree to real-world projects and continue growing within the technology field.
                 </p>
               </div>
             </div>

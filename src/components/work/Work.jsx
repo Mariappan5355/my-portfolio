@@ -15,7 +15,7 @@ const Work = () => {
       data-aos="fade-up"
        className="left flex-1 w-full">
         <p className="text-gray-700 font-medium w-[100%]">
-          Here are some of my works.
+          Here are some of my works (click logo for more details about the project).
         </p>
       </div>
       {/* card */}

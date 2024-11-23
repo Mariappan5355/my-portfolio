@@ -12,7 +12,7 @@ import {
   SiExpress,
 } from "react-icons/si";
 import { GrCode } from "react-icons/gr";
-import { FaReact,FaLaravel } from "react-icons/fa";
+import { FaReact,FaLaravel, FaNodeJs } from "react-icons/fa";
 import { DiPhp } from "react-icons/di";
 
 
@@ -44,15 +44,15 @@ const Skills = ({ darkMode }) => {
               className="progress flex items-center h-[100%] justify-end md:justify-center"
             >
               <div className=" flex flex-col gap-6  w-3/4  my-5 md:w-[90%]">
-                <ProgressBar logo={<IoLogoHtml5 />} name={"HTML"} value={95} />
-                <ProgressBar logo={<FaLaravel />} name={"Laravel"} value={95} />
+                <ProgressBar logo={<IoLogoHtml5 />} name={"HTML"} value={85} />
+                <ProgressBar logo={<FaNodeJs />} name={"NodeJs"} value={90} />
                 <ProgressBar
                   logo={<SiJavascript />}
                   name={"Javascript"}
-                  value={80}
+                  value={88}
                 />
-                <ProgressBar logo={<FaReact />} name={"React Js"} value={80} />
-                <ProgressBar logo={<IoLogoCss3 />} name={"CSS"} value={88} />
+                <ProgressBar logo={<FaReact />} name={"React Js"} value={85} />
+                <ProgressBar logo={<FaLaravel />} name={"Laravel"} value={88} />
                 {/* <ProgressBar
                   logo={<SiTailwindcss />}
                   name={"Tailwind CSS"}
@@ -67,11 +67,11 @@ const Skills = ({ darkMode }) => {
             <SkillBox
                 className=""
                 logo={
-                  <FaLaravel/>
+                  <FaNodeJs/>
                 }
                 black={"white"}
                 white={"black"}
-                skill={"Laravel"}
+                skill={"NodeJs"}
               />
               {/* <SkillBox
                 logo={<DiPhp />}
@@ -94,10 +94,10 @@ const Skills = ({ darkMode }) => {
                 skill={"React"}
               />
                <SkillBox
-                logo={<SiTailwindcss />}
+                logo={<FaLaravel />}
                 black={"white"}
                 white={"black"}
-                skill={"Tailwind CSS"}
+                skill={"Laravel"}
               />
           
               {/* <SkillBox
