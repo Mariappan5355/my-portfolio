@@ -44,7 +44,7 @@ const Resume = () => {
                   Nov 2021 - Present
                 </span>
                 <p className=" text-[.9rem] text-justify break-words text-gray-500">
-                At Soft Suave Technologies since November 2021, I have employed Node.js, React, MySQL, and Laravel 
+                At Soft Suave Technologies since November 2021, I have employed Node.js, React, MySQL, and MongoDB 
                 to enhance various web projects. I have proficiently built robust backends, engaging front-end 
                 interfaces, and efficient MySQL data systems. By collaborating seamlessly with cross-functional teams, 
                 I consistently deliver high-quality results and remain dedicated to driving innovation for the company's continued success.

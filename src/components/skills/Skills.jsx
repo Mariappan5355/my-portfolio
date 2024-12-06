@@ -7,7 +7,7 @@ import { IoLogoHtml5, IoLogoCss3 } from "react-icons/io";
 
 import {
   SiJavascript,
-  SiTailwindcss,
+  SiMongodb,
   SiMysql,
   SiExpress,
 } from "react-icons/si";
@@ -45,14 +45,14 @@ const Skills = ({ darkMode }) => {
             >
               <div className=" flex flex-col gap-6  w-3/4  my-5 md:w-[90%]">
                 <ProgressBar logo={<IoLogoHtml5 />} name={"HTML"} value={85} />
-                <ProgressBar logo={<FaNodeJs />} name={"NodeJs"} value={90} />
+                <ProgressBar logo={<FaNodeJs />} name={"NodeJs (ExpressJs)"} value={90} />
                 <ProgressBar
                   logo={<SiJavascript />}
                   name={"Javascript"}
                   value={88}
                 />
                 <ProgressBar logo={<FaReact />} name={"React Js"} value={85} />
-                <ProgressBar logo={<FaLaravel />} name={"Laravel"} value={88} />
+                <ProgressBar logo={<SiMongodb />} name={"MangoDB"} value={80} />
                 {/* <ProgressBar
                   logo={<SiTailwindcss />}
                   name={"Tailwind CSS"}
@@ -94,10 +94,10 @@ const Skills = ({ darkMode }) => {
                 skill={"React"}
               />
                <SkillBox
-                logo={<FaLaravel />}
+                logo={<SiMongodb />}
                 black={"white"}
                 white={"black"}
-                skill={"Laravel"}
+                skill={"MongoDb"}
               />
           
               {/* <SkillBox

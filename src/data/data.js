@@ -21,13 +21,13 @@ export const data = [
     id: 2,
     img: 'https://i.postimg.cc/k5HxbVV9/All-sprt.png',
     title: "All Sports",
-    desc: `This project involves the development of a comprehensive web platform for a national sports games event. The technologies used for this project are React for the frontend and Laravel for the backend. The website serves as a hub for displaying detailed information about 43 sports, including sports details, medal information, event specifics, and schedules.`,
-    technologies: "React.js, Laravel, MySQL 8, Jquery.",
+    desc: `This project involves the development of a comprehensive web platform for a national sports games event. The technologies used for this project are React for the frontend and NodeJs for the backend. The website serves as a hub for displaying detailed information about 43 sports, including sports details, medal information, event specifics, and schedules.`,
+    technologies: "React.js, NodeJs, MySQL 8, Jquery.",
     projectManagement: "JIRA",
     responsibilities: [
       "Building a robust backend application to support frontend functionalities.",
       "Developing 6 APIs to facilitate communication between the frontend and backend, covering sports profiles, order of play, scorecards, leagues, leaderboards, and elimination brackets.",
-      "Implementing Laravel middleware for authentication to ensure secure access to APIs using API tokens.",
+      "Implementing NodeJs middleware for authentication to ensure secure access to APIs using API tokens.",
       "Managing data from 3 different vendors supplying points details for the 43 sports.",
       "Designing a common controller to fetch data from these vendors based on sports and event criteria."
     ]

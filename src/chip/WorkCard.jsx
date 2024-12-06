@@ -40,7 +40,7 @@ const WorkCard = () => {
             onClick={() => handleClick(project)}
           >
             <ImageContainer
-              className={`hover:scale-105 transition durati5n-500 shadow-xl rounded-md overflow-hidden sm:h-[260px] sm:w-[92%] mx-auto ${
+              className={`hover:scale-105 transition durati5n-500 shadow-xl rounded-md overflow-hidden sm:h-[260px] sm:w-[92%] mx-auto w-[75vw] ${
                 index === 0 ? " " : ""
               }`} // Apply negative margin to first image box
             >
@@ -153,6 +153,10 @@ const ImageContainer = styled.div`
   align-items: center;
   justify-content: center;  /* Center the logo inside the box */
   // background-color: #f0f0f0;  /* Optional: Set a background color for visibility */
+
+  @media (max-width: 768px) {
+    width: 75vw; /* Adjust the width for mobile devices */
+  }
 `;
 
 const StyledImage = styled.img`
